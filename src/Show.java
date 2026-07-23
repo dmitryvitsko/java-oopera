@@ -16,13 +16,16 @@ public class Show {
         if (actors.isEmpty()) {
             actors.add(actor);
         } else {
+            int count = 0;
             for (Actor a : actors) {
                 if (a.equals(actor)) {
                     return;
-                } else {
-                    actors.add(actor);
-                    return;
+                } else  {
+                    count++;
                 }
+            }
+            if (count == actors.size()) {
+                actors.add(actor);
             }
         }
     }
@@ -32,7 +35,7 @@ public class Show {
         for (Actor a : actors) {
             if (a.surname.equals(lastname)) {
                 index = actors.indexOf(a);
-                return;
+                break;
             }
         }
         if (index != -1) {
