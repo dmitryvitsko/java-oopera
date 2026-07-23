@@ -4,12 +4,48 @@ public class Show {
     String title;
     double duration;
     Director director;
-    ArrayList<Actor> actors;
+    ArrayList<Actor> actors = new ArrayList<>();
 
-    public Show(String title, double duration, Director director, ArrayList<Actor> actors) {
+    public Show(String title, double duration, Director director) {
         this.title = title;
         this.duration = duration;
         this.director = director;
-        this.actors = actors;
+    }
+
+    public void addActor(Actor actor) {
+        if (actors.isEmpty()) {
+            actors.add(actor);
+        } else {
+            for (Actor a : actors) {
+                if (a.equals(actor)) {
+                    return;
+                } else {
+                    actors.add(actor);
+                    return;
+                }
+            }
+        }
+    }
+
+    public void changeActor(Actor newActor, String lastname) {
+        int index = -1;
+        for (Actor a : actors) {
+            if (a.surname.equals(lastname)) {
+                index = actors.indexOf(a);
+                return;
+            }
+        }
+        if (index != -1) {
+            actors.set(index, newActor);
+        } else {
+            System.out.println("При попытке замены актера, актер с такой фамилией не был найден");
+        }
+
+    }
+
+    public void printActors() {
+        for (Actor actor : actors) {
+            System.out.println(actor + " - " + this.title);
+        }
     }
 }

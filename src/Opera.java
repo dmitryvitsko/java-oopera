@@ -3,8 +3,8 @@ import java.util.ArrayList;
 public class Opera extends MusicalShow{
     int choirSize;
 
-    public Opera(String title, double duration, Director director, ArrayList<Actor> actors, String musicAuthor, String librettoText, int choirSize) {
-        super(title, duration, director, actors, musicAuthor, librettoText);
+    public Opera(String title, double duration, Director director, MusicAuthor musicAuthor, String librettoText, int choirSize) {
+        super(title, duration, director, musicAuthor, librettoText);
         this.choirSize = choirSize;
     }
 }
