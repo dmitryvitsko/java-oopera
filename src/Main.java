@@ -46,5 +46,8 @@ public class Main {
         System.out.println("--------------------------------------------------------");
         ballet.printLibrettoText();
         opera.printLibrettoText();
+        opera.printDirector();
+        ballet.printDirector();
+        show.printDirector();
     }
 }
